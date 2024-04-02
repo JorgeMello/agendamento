@@ -1,0 +1,294 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f5;
+    color: #333;
+}
+
+header {
+    position: relative; /* Posicionamento relativo para basear o absoluto dos botões */
+    display: flex;
+    justify-content: space-between; /* Distribui o espaço entre os elementos */
+    align-items: center; /* Alinha os elementos verticalmente */
+    background-color: #0054a6; /* Azul universitário */
+    color: #ffffff;
+    padding: 10px 20px;
+}
+
+/* Esconde os pseudo-elementos criados para centralização em telas menores */
+header::before,
+header::after {
+    content: '';
+    flex: 1;
+}
+
+#loginArea {
+    align-self: flex-start;
+}
+
+
+footer {
+    background-color: #0054a6; /* Utilize uma cor que combine com o seu tema */
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: relative; /* ou 'absolute' se quiser que fique sempre no fundo */
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.2); /* Sombra para dar destaque */
+}
+
+footer p {
+    margin: 0; /* Remove margens padrão para o parágrafo */
+    font-size: 0.9em; /* Um tamanho de fonte menor para o texto do rodapé */
+}
+
+header h1 {
+    flex: 1; /* Permite que o título ocupe o espaço necessário */
+    text-align: center; /* Centraliza o título */
+    margin: 0; /* Remove a margem padrão */
+}
+
+nav {
+    position: absolute; /* Posicionamento absoluto */
+    display: flex;
+    justify-content: flex-start; /* Alinha os botões à esquerda */
+}
+
+nav button {
+    background-color: green; /* Dourado */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-right: 10px; /* Espaço entre os botões */
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+nav button:hover {
+    background-color: #b28f00; /* Dourado mais escuro */
+}
+
+#weekNavigation {
+    display: flex;
+    justify-content: space-between; /* Ajustado para space-between */
+    align-items: center; /* Certifica que tudo está alinhado verticalmente */
+    margin: 20px 0;
+    background-color: #0054a6; /* Utilizando o azul universitário do header */
+    padding: 10px;
+    border-radius: 5px; /* Adiciona bordas arredondadas para suavizar */
+    color: #ffffff; /* Muda a cor do texto para branco */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sutil sombra para profundidade */
+}
+
+
+#weekLabel {
+    flex-grow: 1; /* Permite que o rótulo da semana cresça para ocupar o espaço disponível */
+    text-align: center; /* Centraliza o rótulo da semana */
+}
+
+
+#weekNavigation button {
+    background-color: #007bff; /* Azul claro */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin: 0 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+#weekNavigation button:hover {
+    background-color: #0056b3;
+}
+
+#weekNavigation span {
+    font-size: 1.2em; /* Torna o texto um pouco maior */
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase; /* Opcional: transforma o texto em maiúsculas */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    border: 1px solid #ddd;
+    text-align: center;
+    padding: 8px;
+}
+
+th {
+    background-color: #007bff; /* Azul */
+    color: white;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #f2f2f2;
+}
+
+.available:hover {
+    background-color: #d1a110; /* Dourado, para indicar seleção */
+    color: #ffffff;
+    cursor: pointer;
+}
+
+#scheduleTable td {
+    cursor: pointer;
+}
+
+.month-label {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: #0054a6; /* Cor azul universitário */
+    margin-bottom: 10px; /* Ajuste conforme necessário */
+}
+
+/* Estilo para o fundo escurecido do modal */
+.modal-backdrop {
+    display: none; /* Escondido por padrão */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo escuro semitransparente */
+}
+
+/* Estilo para a caixa do modal */
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto; /* Centraliza e ajusta a margem superior */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 450px; /* Ajusta a largura máxima do modal */
+    border-radius: 10px; /* Cantos arredondados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidade */
+}
+
+/* Botão para fechar o modal */
+.close-modal {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-login-modal {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-login-modal:hover,
+.close-login-modal:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.close-modal:hover,
+.close-modal:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Estiliza os inputs e labels dentro do modal */
+.modal-content form {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-content form label {
+    margin-top: 10px;
+}
+
+.modal-content form input[type="text"],
+.modal-content form input[type="password"],
+.modal-content form input[type="email"],
+.modal-content form input[type="tel"] {
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+.modal-content form input[type="submit"] {
+    background-color: #0054a6; /* Cor do tema do site */
+    color: white;
+    padding: 10px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.modal-content form input[type="submit"]:hover {
+    background-color: #003974;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 600px) {
+    .modal-content {
+        margin: 20% auto; /* Aumenta a margem superior em telas menores */
+        width: 95%; /* Maior largura em telas menores */
+    }
+}
+
+/* Responsividade para telas menores, como iPhone 13 Pro Max */
+@media only screen and (max-width: 480px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav {
+        position: static; /* Retira a posição absoluta para empilhar */
+        display: flex;
+        justify-content: center; /* Centraliza os botões em telas menores */
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    nav button {
+        padding: 5px;
+        font-size: 14px; /* Tamanho menor da fonte para telas pequenas */
+        margin: 0 5px; /* Menor espaço entre os botões */
+    }
+
+    header h1 {
+        font-size: 20px; /* Tamanho da fonte menor para o título */
+        padding: 0;
+        margin-top: 0;
+    }
+
+    /* Ajustes para a tabela de agendamento */
+    table {
+        display: block; /* Para permitir rolagem horizontal */
+        overflow-x: auto; /* Ativa rolagem horizontal se necessário */
+    }
+
+    th, td {
+        padding: 8px; /* Espaçamento reduzido para células da tabela */
+    }
+
+    /* Ajustes para a navegação de semana */
+    #weekNavigation {
+        font-size: 14px; /* Redução do tamanho da fonte */
+    }
+}
